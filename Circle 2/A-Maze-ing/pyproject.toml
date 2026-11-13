@@ -1,0 +1,38 @@
+[project]
+name = "mazegen"
+version = "1.0.0"
+description = "projet a-maze-ing"
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "pydantic>=2.12.5",
+    "mypy>=1.19.1",
+    "poetry>=2.3.2",
+    "arcade>=3.3.3,<4.0.0",
+]
+authors = [
+    {name = "npillet"},
+    {name = "frrenaux"}
+]
+license = "MIT"
+
+[dependency-groups]
+dev = [
+    "flake8>=7.3.0",
+    "mypy>=1.19.1",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["maze*"]
+
+[tool.setuptools.package-data]
+maze = ["*.md"]
